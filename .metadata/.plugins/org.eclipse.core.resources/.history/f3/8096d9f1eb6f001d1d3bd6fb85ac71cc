@@ -1,0 +1,29 @@
+package testeeplayers;
+
+import org.junit.Before;
+import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class TesteLogin {
+	private WebDriver driver;
+	
+	@Before
+	public void abrirNavegador() {
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\admin\\chromedriver\\chromedriver.exe");
+		driver = new ChromeDriver();
+		driver.manage().window().maximize();
+	}
+	
+	@Test
+	public void testeNavegador() {
+		driver.get("https://www.google.com/");
+		
+		WebElement inputEmail = driver.findElement(By.id("email"));
+		WebElement inputSenha = driver.findElement(By.id("senha"));
+		WebElement botaoLogin = driver.findElement(By.id("botao-enviar"));
+	}
+	
+}
